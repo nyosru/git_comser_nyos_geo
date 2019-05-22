@@ -7,8 +7,8 @@ class Ip {
     public static function search(string $ip) {
 
         $pdoOption = array(
-            PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC
+            \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+            \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC
         );
 
         $SqlLiteFile = dirname(__FILE__) . '/db.sl3';
@@ -25,6 +25,8 @@ class Ip {
         $sql = $db->prepare('SELECT `full_name`, `short_name`, `iso` FROM `Iptocountry` WHERE :ip >=`ip_from` AND :ip <=`ip_to` ;');
         $sql->execute(array(':ip' => sprintf("%u", ip2long($ip))));
 
+        $db = null;
+        
         return $sql->fetch();
     }
 
