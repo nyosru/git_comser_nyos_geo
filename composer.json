@@ -1,7 +1,7 @@
 {
-    "name": "nyos/geo",
+    "name": "nyos/geo-ip",
     "description": "Search country from ip",
-    "version": "0.1.5",
+    "version": "0.1.7",
     "keywords": [
         "geo","ip","nyos", "uralweb.info"
     ],
@@ -24,6 +24,6 @@
     }
     ,
     "autoload": {
-        "classmap": ["./geo_country_ip.php"]
+        "classmap": ["./geo-ip.php"]
     }
 }

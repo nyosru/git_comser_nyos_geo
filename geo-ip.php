@@ -2,7 +2,7 @@
 
 namespace nyos\geo;
 
-class IpCountry {
+class Ip {
 
     public static function search(string $ip) {
 
